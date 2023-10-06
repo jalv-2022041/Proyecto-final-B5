@@ -72,9 +72,8 @@ void medirResistencia() {
   float tensionMedida = (float)valorAnalogico * (5.0 / 1023.0);
 
   // Calcular la corriente (I) usando la ley de Ohm: I = V / R
-  float corriente = tensionMedida / resistenciaConocida;
-
-  // Calcular la resistencia desconocida usando la ley de Ohm: R = V / I
+  float corriente = tensionMedida / resistenciaConocida
+  //ley de Ohm: R = V / I
   float resistenciaDesconocida = tensionMedida / corriente;
 
   Serial.print("Resistencia: ");
@@ -98,7 +97,5 @@ for(int i=0;i<numeroMuestral;i++)
 {
   LeerSenso= analogRead(A2) * (5.0 / 1023.0);
   inten=inten+(LeerSenso-2.5)/Sensibilidad;
-}
 inten=inten/numeroMuestral;
-return(inten);
-}
+return(inten);}
