@@ -10,17 +10,14 @@ void setup() ;
   BLUEE.begin(9600);}
 char recep;
 void loop() {
-  // Verificar si hay datos disponibles desde la aplicación Bluetooth
+  // Verifica si hay datos 
   if (BLUEE.available()) {
     recep = BLUEE.read();
     Serial.println(recep);
-    // Procesar comandos según corresponda
     if (recep == 'A') {
-      medirVoltaje();
-    }
+      medirVoltaje();   }
     else if (recep == 'B') {
-      medirResistencia();
-    }
+      medirResistencia();    }
     else if (recep == 'C') {
       medirCorriente(); } }
   unsigned long tiempoActual = millis();
@@ -45,16 +42,13 @@ void medirResistencia() {
   Serial.print("Resistencia: ");
   Serial.println(resistenciaDesconocida);
   BLUEE.print(resistenciaDesconocida);
-  BLUEE.print(";");
-}
-
+  BLUEE.print(";");}
 void medirCorriente() {
   float Corriente=calculo(500);
       Serial.print("Corriente: ");
       Serial.println(Corriente,3);
       BLUEE.print(Corriente,3);
-      BLUEE.print(";");
-}
+      BLUEE.print(";");}
 float calculo(int numeroMuestral)
 {
 float LeerSenso = 0;
