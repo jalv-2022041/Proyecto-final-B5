@@ -1,5 +1,5 @@
-int Valuable;                // Variable que almacena el valor raw (0 a 1023)
-float VOLTAGE;               // Variable que almacena el voltaje (0.0 a 25.0)
+int Valuable;       
+float VOLTAGE;   // Variable que almacena el voltaje 
 float Sensibilidad = 0.185;
 const int pinAnalogico = A0;    // Pin analógico para medir la resistencia 
 const float resistenciaConocida = 1000.0; // Resistencia(1k ohm)
